@@ -13,14 +13,19 @@ export class AltaClienteComponent {
 
   constructor (private clientesService:ClientesService){} /* ES UNA FUNSION PORQUE TIENE {}*/
 
-  ngOnInit():void{
+  ngOnInit():void{ 
+    /*  el ngOnInit se encarga de devolver los campos vacios tanto al inicio como al guardar 
+    la informacion cargada en el campo del browser 
+  */
+
 
     this.cliente = this.clientesService.resetDataCliente();
     this.grupos = this.clientesService.getGrupos();
   }
 
   nuevoCliente(){
-    this.clientesService.addCliente(this.cliente);
+    this.clientesService.addCliente(this.cliente);   
+     /* el this  hace referencia a variables de su propia clase , modulo */
     this.cliente = this.clientesService.resetDataCliente();
   
   }
